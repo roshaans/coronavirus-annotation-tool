@@ -3,14 +3,37 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { VgCoreModule } from 'videogular2/compiled/core';
+import { VgControlsModule } from 'videogular2/compiled/controls';
+import { VgOverlayPlayModule } from 'videogular2/compiled/overlay-play';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCardModule} from '@angular/material/card';
+import {MatTabsModule} from '@angular/material/tabs';
+import { TimePipe } from './time.pipe';
 
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { VideoComponent } from './video/video.component';
 @NgModule({
   declarations: [
-    AppComponent
+    TimePipe,
+    AppComponent,
+    VideoComponent
   ],
   imports: [
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
     BrowserModule,
-    AppRoutingModule
+    MatCardModule,
+    MatTabsModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatSliderModule,
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

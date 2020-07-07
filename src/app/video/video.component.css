@@ -1,0 +1,94 @@
+vg-player {
+    margin-top: 15px;
+   justify-content: center;
+   width: 750px;
+   border: white solid 5px;
+}
+
+.cotainer {
+   display: flex;
+   justify-content: center;
+}
+.control {
+    width: 250;
+ }
+ .cardContainer {
+    display:flex;
+    justify-content: center;
+    /* margin-top: 10px; */
+}
+.myButton {
+    margin-top: 140px;
+    margin-left: 50px;
+    height: 50px;
+   
+    background-color:rgb(43, 43, 43);
+    border-radius:8px;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:20px;
+    font-weight:bold;
+    padding:13px 32px;
+   
+}
+.myButton:hover {
+    background-color:#545454;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
+    background-color:#757474;
+
+}
+
+.infoBox{ 
+    display: flex; 
+    justify-content: center;
+    flex-direction: row;
+    margin:20px;
+    margin-top:20px;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .infoBox{ 
+        display: flex; 
+        justify-content: center;
+        flex-direction: column;
+        
+    }
+  }
+
+
+  .mat-card {
+    background-color: #dadada;
+  }
+  
+  .markButton {
+    border-radius: 5px;
+    border: black  1px solid;
+    width: 75px;
+    height: 50px;
+    background-color: rgb(43, 43, 43);
+    color: white;
+    justify-content: center;
+  }
+  .markButton:hover {
+    border-radius: 5px;
+    border: black 1px solid;
+    width: 75px;
+    height: 50px;
+    background-color: #545454;
+    color: white;
+  }
+
+  .markButton:active {
+    border-radius: 5px;
+    border: black  1px solid;
+    width: 75px;
+    height: 50px;
+    background-color: #757474;
+    color: white;
+  }

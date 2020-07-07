@@ -1,0 +1,143 @@
+
+
+
+
+<div class = "animate__animated animate__backInUp" style="text-align:center">
+  <!-- <h1>
+    <strong> Qualtrics Alterative Concept</strong>
+  </h1> -->
+  <div >
+  <div class = "infoBox">
+      <mat-card [ngStyle] = "borderColorStart"  style = "line-height: 20px;margin-right: 15px; background:linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);"> 
+
+          <mat-card-header style = "justify-content: center;">
+            <mat-card-title>
+              Story Start Time
+            </mat-card-title>
+          </mat-card-header>
+     <mat-card-content>
+
+      {{startTime |  time }} 
+      
+     </mat-card-content>
+        </mat-card>
+
+        <mat-card [ngStyle] = "borderColorEnd"  style = "line-height: 20px; margin-left: 15px;background:linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);"> 
+
+          <mat-card-header style = "justify-content: center;">
+            <mat-card-title>
+                Story End Time
+              </mat-card-title>
+            </mat-card-header>
+        <mat-card-content>
+          {{endTime |  time }} 
+        </mat-card-content>
+          </mat-card>
+</div>
+
+</div>
+</div>
+<div class = "cotainer">
+
+
+    <vg-player  (onPlayerReady)="onPlayerReady($event)">
+        <vg-overlay-play ></vg-overlay-play>
+    
+      <vg-controls>
+        
+            <vg-play-pause></vg-play-pause>
+    
+    
+          <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+    
+          <vg-scrub-bar [vgSlider]="true">
+              <vg-scrub-bar-current-time [vgSlider]="true"></vg-scrub-bar-current-time>
+              <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+              <!-- <vg-scrub-bar-cue-points [vgCuePoints]="textTrack?.cues"></vg-scrub-bar-cue-points> -->
+
+          </vg-scrub-bar>
+    
+          <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+          <vg-playback-button></vg-playback-button>
+    
+          <vg-mute></vg-mute>
+          <vg-volume></vg-volume>
+    
+          <vg-fullscreen></vg-fullscreen>
+    
+      </vg-controls>
+    
+      <video #media
+      [vgMedia]="media"
+      [src]="currentItem"
+      id="singleVideo"
+      
+      >
+    
+      <!-- <track src="../data/cue-points.vtt" kind="metadata" label="Cue Points" default
+                   #metadataTrack
+                   vgCuePoints
+                   (onEnterCuePoint)="onEnterCuePoint($event)"
+                   (onExitCuePoint)="onExitCuePoint($event)">  -->
+    
+    </video>
+    </vg-player>
+    
+    
+    </div>
+    <div class = "animate__animated animate__backInUp">
+    <div *ngIf = "showController == true" class  = "cardContainer"> 
+      
+  <div style = "padding: 15px;
+  background:linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);
+    width: 400px;
+  border-bottom: 3px solid black;
+  justify-content: space-around;
+  display: flex;
+  flex-flow: wrap;
+  margin-top: 15px;">
+      <!-- <mat-card style = "background:linear-gradient(315deg, #f7b42c 0%, #fc575e 74%)" class="control">
+        <mat-card-header style = "    display: flex;
+        justify-content: center;">
+          <mat-card-title >
+            </mat-card-title>
+  
+        </mat-card-header>
+  
+        <mat-card-actions style = "display: flex; flex-direction: row; justify-content: space-evenly; ">
+        -->
+          <button mat-raised-button style = "margin:15px;background-color: #000000;color: white;"(click) = "startButtonClicked()">  
+            <strong>Mark Start Time</strong> 
+              </button>
+          <!-- <button class = "markButton" (click) =  > -->
+        
+          <!-- </button> -->
+          <!-- <img style = "width: 50px; height:50px" src="assets/stopwatch.svg" alt=""> -->
+          <button mat-raised-button style = "margin:15px;background-color: #000000;color: white;" (click) = "endButtonClicked()">  
+            <strong>Mark End Time</strong> 
+              </button>
+         
+          <!-- <div style = "display: flex; justify-content: center;">
+         
+        </div> -->
+  
+        <!-- </mat-card-actions> -->
+        
+        <button (click) = "seekToSuggested()"  mat-raised-button>Seek To Suggested Time</button>
+       <!-- <div style = "display: flex; justify-content: center; ">  -->
+        <!-- <button style = "display: flex; width: 100px; height: 50px; margin: 10px;"   (click) = "resetTimer()"  mat-raised-button>Reset Timer</button> -->
+     
+      <!-- </div>
+      </mat-card> -->
+    </div>
+    <div style = "    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-left: 50px;">
+      <button mat-flat-button *ngIf = "bothTimeClicked == true"(click) = 'nextClicked()' >Next Step</button>
+    </div>
+    </div>
+  
+    <!-- </div> -->
+  
+  </div>
