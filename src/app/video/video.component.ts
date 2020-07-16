@@ -1,3 +1,4 @@
+import { TimePipe } from './../time.pipe';
 import { Component, OnInit } from '@angular/core';
 import { VgPlayer, VgAPI } from 'videogular2/compiled/core';
 import {ActivatedRoute} from '@angular/router'
@@ -69,13 +70,13 @@ export class VideoComponent implements OnInit {
 
   textTrack;
   constructor(private activatedRoute: ActivatedRoute, private _snackBar: MatSnackBar) {
-    console.log(this.activatedRoute.snapshot.paramMap.getAll)
   }
 
   startButtonClicked() {
     this.startButtonHitCount += 1
+
     if(this.nextButtonHitCount > 0){
-      this.openSnackBar("If you have made any mistakes and are proceeding to remark a clip, please be sure to visit the newly open Qualtrics Video.", this.horizontalPosition)
+      this.openSnackBar("If you have made any mistakes and are proceeding to remark a clip, please be sure to visit the newly open Qualtrics Video.", "left")
     }
     // this.api.seekTime(this.seekTime)this.startPressed = true;
     this.startPressed = true;
@@ -90,13 +91,17 @@ export class VideoComponent implements OnInit {
       this.nextButtonShow = true;
 
     }  
+    const timePipe = new TimePipe();
+
+    this.openSnackBar("Start Time Marked at " + timePipe.transform(this.startTime), this.horizontalPosition)
 
     
   }
 endButtonClicked() {
   if(this.nextButtonHitCount > 0){
-    this.openSnackBar("If you have made any mistakes and are proceeding to remark a clip, please be sure to visit the newly open Qualtrics Video.", this.horizontalPosition)
+    this.openSnackBar("If you have made any mistakes and are proceeding to remark a clip, please be sure to visit the newly open Qualtrics Video.", "left")
   }
+
   this.endButtonHitCount += 1
 this.endPressed = true;
 this.borderColorEnd['border'] = '5px solid #4caf50';
@@ -109,6 +114,10 @@ if(this.startTimeClicked == true && this.endTimeClicked == true) {
   this.bothTimeClicked = true
   this.nextButtonShow = true;
 }  
+const timePipe = new TimePipe();
+
+this.openSnackBar("End Time Marked at " + timePipe.transform(this.endTime), this.horizontalPosition)
+
 }
 openSnackBar(text, horizontal) {
   this._snackBar.open(text, 'End now', {
