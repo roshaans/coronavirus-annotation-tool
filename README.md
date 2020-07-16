@@ -13,6 +13,7 @@ This app is hosted with _Firebase Hosting_ and was created using _Angular_ and _
 - Accordian View to show and hide crucial information
 - Visual Feedback for marking videos
 
+> <img src = "Images/VideoMarkingTool.png" height = 500px/>
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
