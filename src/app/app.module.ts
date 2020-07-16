@@ -13,17 +13,20 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
 import { TimePipe } from './time.pipe';
-
-
+import {MatExpansionModule} from '@angular/material/expansion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VideoComponent } from './video/video.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 @NgModule({
   declarations: [
     TimePipe,
     AppComponent,
     VideoComponent
   ],
-  imports: [
+  imports: [    BrowserAnimationsModule,
+    MatSnackBarModule,
+    MatExpansionModule,
     VgCoreModule,
     VgControlsModule,
     VgOverlayPlayModule,
@@ -32,11 +35,11 @@ import { VideoComponent } from './video/video.component';
     MatTabsModule,
     MatButtonModule,
     MatSidenavModule,
+    MatExpansionModule,
+
     MatSliderModule,
     AppRoutingModule,
-    BrowserAnimationsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
-})
+  bootstrap: [AppComponent]})
 export class AppModule { }

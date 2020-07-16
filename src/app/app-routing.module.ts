@@ -4,16 +4,13 @@ import { Routes, RouterModule } from '@angular/router';
 import {VideoComponent} from './video/video.component'
 
 const routes: Routes = [
-  { path: 'task', component: VideoComponent },
-  { path: 'task/:suggestedStartTime/:video', component: VideoComponent },
-  { path: '',
-    redirectTo: '/task',
-    pathMatch: 'full'
-  },
+  { path: '', component: VideoComponent },
+  { path: ':MarketName/:station/:program_title/:offset/:Text/:bcastid/:hitid/:coder', component: VideoComponent },
+  
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

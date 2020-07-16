@@ -6,7 +6,69 @@
   <!-- <h1>
     <strong> Qualtrics Alterative Concept</strong>
   </h1> -->
-  <div >
+    <div >
+      <div style = "margin-top: 15px;display:flex; justify-content: center">
+      <mat-expansion-panel  style = "width: 800px" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+              <strong>Story Details </strong>
+          </mat-panel-title>
+          <mat-panel-description>
+
+              <strong> Coder Email: </strong> {{coder}}
+              <br/>
+              <div style = "margin-left: 10px"> 
+              <strong> Suggested Start Time: </strong>  {{suggestedStartTime | time}}
+              <br/>
+            </div>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p style = "text-align: left;"> 
+        
+        <strong> Market: </strong> {{marketName}}
+        <br/>
+        <strong> Station: </strong> {{station}}
+        <br/>
+        <strong> Program Title: </strong> {{programTitle}}
+        <br/>
+        <strong> Text Snippet: </strong> {{text}}
+        <br/>     </p> </mat-expansion-panel>
+    </div>
+      <!-- <div class = "rectangle"> 
+          <div style = "margin-bottom: 20px;
+          margin-top: 10px;display: flex; flex-direction: column; justify-content: center;     align-items: center;"> 
+                  <mat-card  style = "line-height: 20px;margin-right: 15px;"> 
+        
+                      <mat-card-header style = "justify-content: center;">
+                        <mat-card-title>
+                            Story Details
+                        </mat-card-title>
+                      </mat-card-header>
+                 <mat-card-content>
+                    <p style = "text-align: left;  width: 500px; ">
+                     <strong> Coder Email: </strong> {{coder}}
+                    <br/>
+                    <strong> Suggested Start Time: </strong>  {{suggestedStartTime | time}}
+                    <br/>
+                    <strong> Market: </strong> {{marketName}}
+                    <br/>
+                    <strong> Station: </strong> {{station}}
+                    <br/>
+                    <strong> Program Title: </strong> {{programTitle}}
+                    <br/>
+                    <strong> Text Snippet: </strong> {{text}}
+                    <br/>
+                   
+
+                  </p>
+        
+                 </mat-card-content>
+                    </mat-card>
+        
+        
+                
+            </div>
+          </div> -->
   <div class = "infoBox">
       <mat-card [ngStyle] = "borderColorStart"  style = "line-height: 20px;margin-right: 15px; background:linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);"> 
 
@@ -139,5 +201,7 @@
     </div>
   
     <!-- </div> -->
-  
-  </div>
+    <button mat-raised-button style = "margin:15px;background-color: yellow; position: fixed;color: black; bottom: 15px;"(click) = "feedbackButtonClicked()">  
+      Give Feedback
+    </button>
+    </div>
