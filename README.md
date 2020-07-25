@@ -1,4 +1,4 @@
-# CoronaVirus News Annotation Tool
+# 👀📺 CoronaVirus News Annotation Tool
 
 > ## Check out the application [here!](https://video-marking-tool.web.app/#/Atlanta,%20Ga/WAGA/FOX%205%20News%20at%2010/120/This%20is%20an%20example%20of%20the%20text%20we%20would%20show%20the%20coder%20of%20where%20the%20keyword%20hit%20occurred/xWAGA_03_01_1/23564/lbaum@wesleyan.edu)
 
